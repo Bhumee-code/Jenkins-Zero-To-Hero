@@ -14,10 +14,8 @@ pipeline {
         docker { image 'node:16-alpine' }
       }
       steps {
-        sh 'sudo apt install default-jre'
-        sh 'cd /java'
-        sh 'javac HelloWorld.java'
-        sh 'java HelloWorld'
+        sh 'npm install'   // Run npm commands on the agent
+        sh 'npm run build' // Or other Node.js scripts
       }
     }
   }
